@@ -10,7 +10,7 @@ public class WEEK3 {
         System.out.println("===SIMPLE GRADE CLASSIFIER===");
         
         // FIRST TEST VALUE (FAILED)
-        int testValue1 = 55, testValue2 = 90;
+        int testValue1 = 50, testValue2 = 90;
         if (testValue1 >= 60) {
             System.out.println("REMARKS: PASSED");
         } else {
@@ -50,7 +50,7 @@ public class WEEK3 {
             System.out.println("SUBTOTAL: " + subtotal);
         }
         
-        System.out.println("\n===NESTED LOGIN VALIDATOR===");
+        System.out.println("\n---NESTED LOGIN VALIDATOR---");
         
         String username = "admin";
         String password = "javadeveloper2025";
@@ -73,16 +73,16 @@ public class WEEK3 {
             System.out.println("INVALID USERNAME");
         }
     
-        System.out.println("\n===ATM TRANSACTION AUTHORIZER===");
+        System.out.println("\n---ATM TRANSACTION AUTHORIZER---");
 
         String user = "Jan";
         String fourDigit = "0509";
         double accountBalance = 50000;
 
-        System.out.print("ENTER YOUR USERNAME: ");
+        System.out.print("Enter your username: ");
         String inputUser = scanner.nextLine();
         
-        System.out.print("ENTER YOUR PASSWORD: ");
+        System.out.print("Enter your password: ");
         String inputPass = scanner.nextLine();
         
         // 1. Nested if for Username and PIN verification
@@ -135,26 +135,26 @@ public class WEEK3 {
                 if (withdraw <= dailyLimit) {
                     if (totalDeduction <= accountBalance) {
                         accountBalance -= totalDeduction;
-                        System.out.println("\nSTATUS: APPROVED");
-                        System.out.println("WITHDRAWAL AMOUNT: " + withdraw);
-                        System.out.println("TRANSACTION FEE: " + transacFee);
-                        System.out.println("TOTAL DEDUCTED: " + totalDeduction);
-                        System.out.println("REMAINING BALANCE: " + accountBalance);
+                        System.out.println("\nSTATUS: Approved");
+                        System.out.println("Withdrawal Amount: " + withdraw);
+                        System.out.println("Transaction Fee: " + transacFee);
+                        System.out.println("Total Deducted: " + totalDeduction);
+                        System.out.println("Remaning Balance: " + accountBalance);
                     } else {
-                        System.out.println("\nSTATUS: DENIED");
-                        System.out.println("REASON: Insufficient funds (balance cannot cover amount plus fee).");
+                        System.out.println("\nStatus: Denied");
+                        System.out.println("Reason: Insufficient funds (balance cannot cover amount plus fee).");
                     }
                 } else {
-                    System.out.println("\nSTATUS: DENIED");
-                    System.out.println("REASON: Withdrawal amount exceeds daily limit of " + dailyLimit + " for tier " + accTier + ".");
+                    System.out.println("\nStatus: Denied");
+                    System.out.println("Reason: Withdrawal amount exceeds daily limit of " + dailyLimit + " for tier " + accTier + ".");
                 }
                 
             } else {
-                System.out.println("\nSTATUS: DENIED");
-                System.out.println("REASON: Incorrect PIN.");
+                System.out.println("\nStatus: Denied");
+                System.out.println("Reason: Incorrect PIN.");
             }
         } else {
-            System.out.println("\nSTATUS: DENIED");
+            System.out.println("\nStatus: Denied");
             System.out.println("REASON: Invalid username.");
         }
     }
