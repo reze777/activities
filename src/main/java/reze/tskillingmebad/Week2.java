@@ -89,16 +89,22 @@ With ++count, count is increased by 1 first, then the new value is printed.
 That is why it prints 12 instead of 11.
 */
 
-    
+ System.out.println ("----------------------------------");
+
+  int num1 = 55, num2 = 70, num3 = 80;
+
+  System.out.println ("---PRECEDENCE PUZZLE SOLVER---");  
+
+  boolean result1 = ++num1 + 30 > 20 && --num1 * 2 > 0; /*true */
+  System.out.println ("Result 1: " + result1); /* results evaluated to true */
+
+  boolean result2 = num2 + num3 <= 150 || (num3 - num2) * 5 >= 300; /* false */
+  System.out.println ("Result 2: " + result2); /* results evaluated as true since neither conditions were met */
+
+  boolean result3 = (num1 * 2) + (num2 - num1) >= 70 || (num3 / num2) % 100 <= 158; /* true */
+  System.out.println ("Result 3: " + result3); /* results evaluated to true */
 
 
-
-
-
-
-
-
-    
-
+  
   }
 }
