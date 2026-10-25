@@ -1,15 +1,15 @@
 package reze.tskillingmebad;
 import java.util.Scanner;
 
-public class WEEK3 {
+public class Week3 {
     
     public static void main(String[] args) {
         
-        Scanner scanner = new Scanner(System.in);
+        Scanner reze = new Scanner(System.in);
         
-        System.out.println("===SIMPLE GRADE CLASSIFIER===");
+        System.out.println("---SIMPLE GRADE CLASSIFIER---");
         
-        // FIRST TEST VALUE (FAILED)
+        /* FIRST TEST VALUE (FAILED) */
         int testValue1 = 50, testValue2 = 90;
         if (testValue1 >= 60) {
             System.out.println("REMARKS: PASSED");
@@ -17,37 +17,37 @@ public class WEEK3 {
             System.out.println("REMARKS: FAILED");
         }
         
-        // SECOND TEST VALUE (PASSED)
+        /* SECOND TEST VALUE (PASSED) */
         if (testValue2 >= 60) {
             System.out.println("REMARKS: PASSED");
         } else {
             System.out.println("REMARKS: FAILED");
         }
         
-        System.out.println("\n===MULTI-TIER DISCOUNT SYSTEM===");
+        System.out.println("\n---MULTI-TIER DISCOUNT SYSTEM---");
         
         double purchaseAmount = 27763.63;
         
         if (purchaseAmount >= 25000) {
             double discount = purchaseAmount * 0.15;
             double subtotal = purchaseAmount - discount;
-            System.out.println("DISCOUNT PROVIDED: " + discount);
-            System.out.println("SUBTOTAL: " + subtotal);
+            System.out.println("Discount Provided: " + discount);
+            System.out.println("Subtotal: " + subtotal);
         } else if (purchaseAmount >= 15000) {
             double discount = purchaseAmount * 0.10;
             double subtotal = purchaseAmount - discount;
-            System.out.println("DISCOUNT PROVIDED: " + discount);
-            System.out.println("SUBTOTAL: " + subtotal);
+            System.out.println("Discount Provided: " + discount);
+            System.out.println("Subtotal: " + subtotal);
         } else if (purchaseAmount <= 10000) {
             double discount = purchaseAmount * 0.05;
             double subtotal = purchaseAmount - discount;
-            System.out.println("DISCOUNT PROVIDED: " + discount);
-            System.out.println("SUBTOTAL: " + subtotal);
+            System.out.println("Discount Provided: " + discount);
+            System.out.println("Subtotal: " + subtotal);
         } else {
             double discount = purchaseAmount * 0;
             double subtotal = purchaseAmount - discount;
-            System.out.println("DISCOUNT PROVIDED: " + discount);
-            System.out.println("SUBTOTAL: " + subtotal);
+            System.out.println("Discount Provided: " + discount);
+            System.out.println("Subtotal: " + subtotal);
         }
         
         System.out.println("\n---NESTED LOGIN VALIDATOR---");
@@ -80,16 +80,16 @@ public class WEEK3 {
         double accountBalance = 50000;
 
         System.out.print("Enter your username: ");
-        String inputUser = scanner.nextLine();
+        String inputUser = reze.nextLine();
         
         System.out.print("Enter your password: ");
-        String inputPass = scanner.nextLine();
+        String inputPass = reze.nextLine();
         
-        // 1. Nested if for Username and PIN verification
+        /* Nested if for Username and PIN verification */
         if (inputUser.equals(user)) {
             if (inputPass.equals(fourDigit)) {
 
-                // 2. Else-if ladder to determine Account Tier
+                /* Else-if ladder to determine Account Tier */
                 String accTier = "";
                 if (accountBalance >= 100000) {
                     accTier = "PLATINUM";
@@ -102,7 +102,7 @@ public class WEEK3 {
                 }
                 System.out.println("ACCOUNT TIER: " + accTier);
                 
-                // 3. Switch statement to set daily limit and fee rate
+                /* Switch statement to set daily limit and fee rate */
                 double dailyLimit = 0;
                 double fee = 0;
                 
@@ -131,7 +131,7 @@ public class WEEK3 {
                 double transacFee = withdraw * fee;
                 double totalDeduction = withdraw + transacFee;
                 
-                // 4. Nested if to check daily limit and account balance
+                /* Nested if to check daily limit and account balance */
                 if (withdraw <= dailyLimit) {
                     if (totalDeduction <= accountBalance) {
                         accountBalance -= totalDeduction;
