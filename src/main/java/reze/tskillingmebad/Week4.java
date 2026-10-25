@@ -122,7 +122,7 @@ public class Week4 {
 
         } while (menuChoice != 4);
 
-        System.out.println("Exiting system. Goodbye!");
+        System.out.println("\nExiting system. Goodbye!");
 
         reze.close();
     }
