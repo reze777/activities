@@ -1,5 +1,4 @@
 package reze.tskillingmebad;
-
 import java.util.Scanner;
 
 public class Week4 {
