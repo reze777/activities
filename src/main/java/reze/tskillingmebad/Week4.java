@@ -1,130 +1,157 @@
 package reze.tskillingmebad;
+
 import java.util.Scanner;
 
 public class Week4 {
+
     public static void main(String[] args) {
         Scanner reze = new Scanner(System.in);
-        
+
         System.out.println("---NUMBER AND SQUARE PRINTER---");
-        for(int i = 1; i <= 10; i++){
-            System.out.println(i); // FOR LOOP FOR 1 TO 10
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
         }
+
         System.out.println("--------------------------------");
-        for(int a = 1; a <= 20; a++){
-            System.out.println(a); // FOR LOOP FOR 1 TO 20
+
+        for (int a = 1; a <= 20; a++) {
+            System.out.println(a);
         }
-        
+
         System.out.println("--------------------------------");
-        
+
         System.out.println("---SUM UNTIL SENTINEL VALUE---");
-        
+
         System.out.println("Enter negative number to break the loop: ");
+
         int total = 0;
-        
-        while(true){
+
+        while (true) {
             int userinput = reze.nextInt();
-            
-            if(userinput <= -1){ // used <= -1 instead of == -1 so that it can read values lesser than -1
+
+            if (userinput <= -1) {
                 break;
             }
-            
+
             total += userinput;
         }
-        
+
         System.out.println("Total: " + total);
-        
+
         System.out.println("---------------------------");
-        
+
         System.out.println("---PATTERN GENERATOR---");
-        
+
         int table = 8;
-        
-        for (int column = 1; column <= table; column++){
-  
-            if (column == 3){
+
+        for (int column = 1; column <= table; column++) {
+
+            if (column == 3) {
                 break;
             }
-            
-            for(int row = 1; row <= table; row++){
-                if(row == 5){
+
+            for (int row = 1; row <= table; row++) {
+
+                if (row == 5) {
                     continue;
                 }
-                
+
                 System.out.print("(" + row + "," + column + ") ");
             }
-            
+
             System.out.println();
         }
 
         System.out.println("--------------------------------");
-        for(int a = 1; a <= 20; a++){
+
         System.out.println("--- WAREHOUSE INVENTORY SCANNER ---");
 
         int[][] grid = {
-            {5,  2, -1},
-            {-1, 12,  0},
-            {8,  -1, 4}
+            {5, 2, -1},
+            {-1, 12, 0},
+            {8, -1, 4}
         };
-        
+
         int menuChoice;
 
         do {
             System.out.println("\n1. Total Sum | 2. Find First Low | 3. Update Slot | 4. Exit System");
             System.out.print("Enter selection: ");
+
             menuChoice = reze.nextInt();
 
             if (menuChoice == 1) {
 
                 int totalSum = 0;
+
                 for (int r = 0; r < grid.length; r++) {
                     for (int c = 0; c < grid[r].length; c++) {
+
                         if (grid[r][c] == -1) {
-                            continue; 
+                            continue;
                         }
+
                         totalSum += grid[r][c];
                     }
                 }
+
                 System.out.println("Total Sum (skipping -1): " + totalSum);
 
             } else if (menuChoice == 2) {
-               
+
                 stopSearching:
                 for (int r = 0; r < grid.length; r++) {
+
                     for (int c = 0; c < grid[r].length; c++) {
+
                         if (grid[r][c] >= 0 && grid[r][c] < 5) {
-                            System.out.println("First low value found at: Row " + r + ", Col " + c);
-                            break stopSearching; 
+                            System.out.println(
+                                "First low value found at: Row " + r + ", Col " + c
+                            );
+
+                            break stopSearching;
                         }
                     }
                 }
 
             } else if (menuChoice == 3) {
-            
-                simulateRestock(grid, scanner);
+
+                simulateRestock(grid, reze);
             }
 
         } while (menuChoice != 4);
-        
+
         System.out.println("Exiting system. Goodbye!");
-        reze.close(); 
+
+        reze.close();
     }
 
-   
-    public static void simulateRestock(int[][] grid, Scanner scanner) {
+    public static void simulateRestock(int[][] grid, Scanner reze) {
+
         while (true) {
+
             System.out.print("Enter target row and col indices: ");
+
             int r = reze.nextInt();
             int c = reze.nextInt();
 
-            if (r < 0 || r >= grid.length || c < 0 || c >= grid[r].length || grid[r][c] == -1) {
+            if (r < 0 || r >= grid.length ||
+                c < 0 || c >= grid[r].length ||
+                grid[r][c] == -1) {
+
                 System.out.println("Invalid bounds");
                 continue;
             }
 
             System.out.print("Enter amount to add: ");
-            grid[r][c] += reze.nextInt();
+
+            int amount = reze.nextInt();
+
+            grid[r][c] += amount;
+
             System.out.println("Slot successfully updated.");
-            
+
             return;
         }
     }
